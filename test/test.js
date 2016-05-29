@@ -93,6 +93,13 @@ describe('Markdown tests', () => {
     );
   });
 
+  it('should work with horizontal rule', () => {
+    assert.equal(
+      render('---'),
+      '<span><hr/></span>'
+    );
+  });
+
   it('should work with links', () => {
     assert.equal(
       render('Here is [some link](http://some-url.com).'),

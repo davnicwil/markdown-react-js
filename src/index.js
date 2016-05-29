@@ -137,7 +137,7 @@ function mdReactFactory(options={}) {
   );
 
   function renderChildren(tag) {
-    return tag !== 'img';
+    return tag !== 'img' && tag !== 'hr';
   }
 
   function iterateTree(tree, level=0, index=0) {
