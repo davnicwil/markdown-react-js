@@ -137,7 +137,7 @@ function mdReactFactory(options={}) {
   );
 
   function renderChildren(tag) {
-    return tag !== 'img' && tag !== 'hr';
+    return (tag !== 'img') && (tag !== 'hr');
   }
 
   function iterateTree(tree, level=0, index=0) {
@@ -168,9 +168,9 @@ function mdReactFactory(options={}) {
       );
     }
 
-    return (typeof onIterate === 'function') ?
-      onIterate(tag, props, children, level) :
-      React.createElement(tag, props, renderChildren(tag) ? children : undefined);
+    return (
+      (typeof onIterate === 'function') && onIterate(tag, props, children, level)
+      ) || React.createElement(tag, props, renderChildren(tag) ? children : undefined);
   }
 
   return function(text) {
